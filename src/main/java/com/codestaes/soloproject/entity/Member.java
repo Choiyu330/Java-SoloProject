@@ -6,18 +6,26 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+@NoArgsConstructor
 @Getter
 @Setter
-@NoArgsConstructor
 @Entity
 public class Member {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long memberId;
 
-    private String email;
+    @Column(nullable = false, length = 50)
+    private String title;
 
-    public Member(String email) {
-        this.email = email;
+    @Column(nullable = false, length = 255)
+    private Long todo_order;
+
+    @Column(nullable = false)
+    private boolean completed;
+
+    public Member(Long memberId) {
+        this.memberId = memberId;
     }
+
 }
