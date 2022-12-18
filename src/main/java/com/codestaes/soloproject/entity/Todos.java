@@ -10,10 +10,10 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-public class Member {
+public class Todos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long memberId;
+    private Long todoId;
 
     @Column(nullable = false, length = 50)
     private String title;
@@ -24,8 +24,8 @@ public class Member {
     @Column(nullable = false)
     private boolean completed;
 
-    public Member(Long memberId) {
-        this.memberId = memberId;
+    public Todos(Long todoId) {
+        this.todoId = todoId;
     }
 
 }
