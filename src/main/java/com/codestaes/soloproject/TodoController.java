@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
+import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,14 +29,14 @@ public class TodoController {
 
     // 회원 정보 등록
     @PostMapping
-    public ResponseEntity postTodo(@RequestBody TodoPostDto todoPostDto) {
+    public ResponseEntity postTodo(@Valid @RequestBody TodoPostDto todoPostDto) {
         return new ResponseEntity<>(todoPostDto, HttpStatus.CREATED);
     }
 
     // 회원 정보 수정
     @PatchMapping("/{todo-id}")
     public ResponseEntity patchTodo(@PathVariable("todo-id") long todoId,
-                                    @RequestBody TodoPatchDto todoPatchDto) {
+                                    @Valid @RequestBody TodoPatchDto todoPatchDto) {
 
         todoPatchDto.setTodoId(todoId);
         todoPatchDto.setCompleted(true);

@@ -1,7 +1,10 @@
 package com.codestaes.soloproject.dto;
 
+import javax.validation.constraints.NotBlank;
+
 public class TodoPatchDto {
     private long todoId;
+    @NotBlank(message = "수정하려는 내용은 공백이 아니어야 합니다.")
     private String title;
     private boolean completed;
 
