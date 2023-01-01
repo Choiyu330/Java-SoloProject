@@ -11,14 +11,16 @@ import javax.persistence.*;
 @Entity
 public class Todo {
     @Id
-    @GeneratedValue
-    private long todoId;
-    private String title;
-    private int todo_order;
-    private boolean completed;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long todoId;
 
-    public Todo(String title) {
-        this.title = title;
-    }
+    @Column
+    private String title;
+
+    @Column
+    private int todo_order;
+
+    @Column
+    private Boolean completed;
 
 }
