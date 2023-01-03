@@ -23,4 +23,14 @@ public class Todo {
     @Column
     private Boolean completed;
 
+    public Todo(
+            String title,
+            int todo_order,
+            Boolean completed
+    ) {
+        this.title = title;
+        this.todo_order = todo_order;
+        this.completed = completed;
+    }
+
 }
