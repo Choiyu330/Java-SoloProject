@@ -24,10 +24,12 @@ public class Todo {
     private Boolean completed;
 
     public Todo(
+            Long todoId,
             String title,
             int todo_order,
             Boolean completed
     ) {
+        this.todoId = todoId;
         this.title = title;
         this.todo_order = todo_order;
         this.completed = completed;
