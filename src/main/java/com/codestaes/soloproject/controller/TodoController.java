@@ -43,7 +43,7 @@ public class TodoController {
     // 할 일 수정
     @PatchMapping("/{todo-id}")
     public ResponseEntity patchTodo(@PathVariable("todo-id") Long todoId,
-                                    @Valid @RequestBody TodoPatchDto todoPatchDto) throws Exception {
+                                    @RequestBody TodoPatchDto todoPatchDto) throws Exception {
         Todo update = todoService.updateTodo(
                 todoMapper.TodoPatchDtoToEntity(todoPatchDto)
         );
