@@ -11,7 +11,7 @@ public class Homecontroller {
     @GetMapping("/")
     public ResponseEntity helloWorld() {
         return ResponseEntity.ok().body(
-                Map.of("hello", "world!")
+                Map.of("hello", "world")
         );
     }
 }
