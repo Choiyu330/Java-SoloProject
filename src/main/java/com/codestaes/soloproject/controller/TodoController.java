@@ -50,7 +50,7 @@ public class TodoController {
         return new ResponseEntity<>(update, HttpStatus.OK);
     }
 
-    // 1개의 할 일 조회
+    // 할 일 단건 조회
     @GetMapping("/{todo-id}")
     public ResponseEntity getTodo(@PathVariable("todo-id") @Positive Long todoId) throws Exception {
 
@@ -61,7 +61,7 @@ public class TodoController {
         return new ResponseEntity<>(todoResponseDto, HttpStatus.OK);
     }
 
-    // 모든 할 일 조회
+    // 할일 전체 조회
     @GetMapping
     public ResponseEntity getTodos(
             @PageableDefault(page = 0, size = 10, sort = "todoId", direction = Sort.Direction.DESC)
