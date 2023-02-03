@@ -23,6 +23,7 @@ public class Todo {
     @Column
     private Boolean completed;
 
+    // 생성자
     public Todo(
             Long todoId,
             String title,
